@@ -1,0 +1,30 @@
+<div>
+
+  <mat-card>
+    <h1>{{post.title}}</h1>
+    <h3>{{post.author}}</h3>
+    <h5>{{post.publish_date}}</h5>
+    <span>{{post.description}}</span>
+    <div [innerHTML]="post.content"></div>
+    <blog-comment [comment]="comment" *ngFor="let comment of this.comments | async">
+    </blog-comment>
+
+    <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm.value)"
+      class="ui form">
+
+
+        <input type="text"
+                id="commentInput"
+                placeholder="Enter comment"
+                name="comment"
+                ngModel>
+
+
+    <button type="submit" mat-raised-button>Add Comment</button>
+    </form>
+
+
+  </mat-card>
+
+
+</div>

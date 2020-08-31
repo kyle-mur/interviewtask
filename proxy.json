@@ -1,0 +1,10 @@
+{
+  "/posts/*": {
+    "target": "http://localhost:9001",
+    "secure": false
+  },
+  "/comments/*": {
+    "target": "http://localhost:9001",
+    "secure": false
+  }
+}
